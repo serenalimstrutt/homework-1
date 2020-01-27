@@ -6,6 +6,10 @@ output:
   html_document: default
   pdf_document: default
 ---
+```{r}
+library(usethis)
+use_git_config(user.name = "serenalimstrutt", user.email = "sl487@duke.edu")
+```
 
 ```{r, warning = FALSE, message = FALSE}
 library(tidyverse)
@@ -15,30 +19,63 @@ library(fivethirtyeight)
 # Exercise 1
 
 ```{r, ex-1-dataset-basics}
-# Write your R code in this chunk; delete this comment afterward.
-
+?candy_rankings
 ```
 
-Answer the question in the narrative here.
+There are 85 observations and 13 variables. 
+
 
 # Exercise 2
 
-Answer the question in the narrative here.
+Categorical variables;
+competitorname - the name of the Halloween Candy.
+chocolate - does it contain chocolate?
+
+Numerical Variables:
+sugarpercent - the percentile of sugar it falls under within the dataset.
+pricepercent - the unit price percentile compared to the rest of the set.
 
 # Exercise 3
 
 ```{r, ex-3-winpercent-vs-chocolate}
-# Write your R code in this chunk; delete this comment afterward.
+ggplot(data = candy_rankings, mapping = aes(x = chocolate, y = winpercent)) +
+  geom_point() +
+  labs(title = "Win percentage of candy generally increases with chocolate")
 
 ```
 
-Answer the question in the narrative here.
+We can see that there is an association between a the candy containing chocolate and having a higher win percentage.
 
 # Exercise 4
+```{r}
+candy_rankings %>%
+  filter(winpercent < "32.26") %>%
+  arrange(desc(winpercent)) %>%
+  mutate(win_percent = round(winpercent, digits = 2)) %>%
+  select(competitorname, win_percent) 
+```
 
 # Exercise 5
+```{r}
+candy_rankings %>%
+  summarise(mean_winpercent = mean(winpercent))
+
+candy_rankings <- candy_rankings %>%
+  mutate(chocolate_1 = ifelse(chocolate == TRUE, "choc", "no choc"))
+
+candy_rankings %>%
+  filter(chocolate_1 == "choc")
+```
 
 # Exercise 6
+```{r}
+candy_rankings %>%
+  filter(fruity == TRUE) %>%
+  select(competitorname, winpercent) %>%
+  arrange(desc(winpercent)) %>%
+  slice(1:3)
+```
+
 
 # Exercise 7
 
