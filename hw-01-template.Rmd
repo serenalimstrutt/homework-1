@@ -57,14 +57,10 @@ candy_rankings %>%
 
 # Exercise 5
 ```{r}
+
 candy_rankings %>%
+  group_by(chocolate) %>%
   summarise(mean_winpercent = mean(winpercent))
-
-candy_rankings <- candy_rankings %>%
-  mutate(chocolate_1 = ifelse(chocolate == TRUE, "choc", "no choc"))
-
-candy_rankings %>%
-  filter(chocolate_1 == "choc")
 ```
 
 # Exercise 6
