@@ -1,13 +1,11 @@
 ## HW 01 - Halloween Candy
 
-This is an example of a README file. 
+**Serena Lim-Strutt**
 
-You can write in plain text here to describe what this project is about. 
+*Section 6*
 
-You can also **bold** or *italicize* text. Try it out here!
+*Favorite Candy: 3 Musketeers*
 
-Remember, in Exercise 9 you have to modify this README file.
+This homework assignment was about using piping (and then) to create tables and filter and display data in ways that helped us to analyze candy data. Different ways of displaying the data and different ways of comparing a range of variables were tested to help analalyze trends in what characteristics are correlated with a candy having a higher win percentage. 
 
-My name is **Yue Jiang**, and I'm in all lab sections.
 
-My favorite Halloween candy is *Warheads*.

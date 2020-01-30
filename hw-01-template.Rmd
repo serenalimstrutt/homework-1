@@ -74,6 +74,7 @@ candy_rankings %>%
 
 
 # Exercise 7
+
 There is a very weak positive correlation between price_sugar_index and winpercent.
 
 ```{r}
@@ -92,7 +93,7 @@ The plot where bar-shaped is true does not have any fruity candies and has a hig
 The plot where the candies are not bar shaped also has many more fruity candies. 
 
 ```{r}
-ggplot(data = candy_rankings_new, mapping = aes(x = price_sugar_index, y = winpercent, color = fruity == TRUE)) +
+ggplot(data = candy_rankings_new, mapping = aes(x = price_sugar_index, y = winpercent, color = fruity)) +
   facet_grid(. ~ bar) +
   geom_point() +
   labs(title = "Relationship between the price sugar index and win percentage", subtitle = "Faceted by bar-shaped")
