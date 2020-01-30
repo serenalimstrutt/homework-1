@@ -100,6 +100,4 @@ ggplot(data = candy_rankings_new, mapping = aes(x = price_sugar_index, y = winpe
 ```
 
 
-9 - using piping (and then) to create tables and filta data that helps us to analyze candy data. 
 
-Don't forget to knit to .pdf and upload on Gradescope! You must associate each question with a page and the "Overall section" with the first page.
